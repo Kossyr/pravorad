@@ -16,7 +16,7 @@ model = ChatterboxTurboTTS.from_pretrained(device="cpu")
 messages = utils.load_messages_for_lord("Iris")
 #messages = []
 # append add_player and kick_player
-messages.append(utils.CustomLordAudio("add_player", ""))
+messages.append(utils.CustomLordAudio("add_player", "Like a shadow."))
 messages.append(utils.CustomLordAudio("kick_player", "Behind you."))
 
 for message in messages:

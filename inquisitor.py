@@ -16,7 +16,7 @@ model = ChatterboxTurboTTS.from_pretrained(device="cpu")
 messages = utils.load_messages_for_lord("Inquisitor")
 #messages = []
 # append add_player and kick_player
-messages.append(utils.CustomLordAudio("add_player", "Nobody expects me."))
+messages.append(utils.CustomLordAudio("add_player", "I bring order to chaos."))
 messages.append(utils.CustomLordAudio("kick_player", "Heresy!"))
 
 for message in messages:
@@ -28,8 +28,8 @@ for message in messages:
     output_file = Path(output_dir, f"{message.name}.wav")
     ta.save(output_file, wav, model.sr)
     print(f"Saved to '{output_file}'")
-    time.sleep(5)
+    time.sleep(2)
 
-print("Waiting 5 seconds to properly finish everything")
-time.sleep(5)
+print("Waiting 2 seconds to properly finish everything")
+time.sleep(2)
 print("DONE")
