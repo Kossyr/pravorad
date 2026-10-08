@@ -5,10 +5,12 @@
 | Custom Lord    | Character |
 | -------- | ------- |
 | Azar Javed  | Azar Javed from The Witcher    |
-| Banu Hashim  | Letho from The Witcher    |
+| Banu Hashim  | Letho from The Witcher 3   |
+| Berengar  | Ardal from The Witcher 3   |
 | Captain    | Olgierd von Everec from The Witcher 3    |
 | Constance    | Rosa/Edna var Attre from The Witcher 3    |
 | Cuman    | Lanius from Fallout New Vegas    |
+| Inquisitor    | Mendoza from Risen   |
 | Fatimah    | Carthia from The Witcher 3    |
 | Knight Hospitaller | Vernon Roche from the Witcher 3     |
 | Mulay    | Andrei from Vampire The Masquerade - Bloodlines    |
@@ -18,8 +20,6 @@
 | Vizier | Joshua Graham from Fallout New Vegas     |
 
 Almost certain:
-Berengar - Ardal
-Inquisitor - Mendoza
 
 Candidates:
 Iris - Viconia | Kibellah
