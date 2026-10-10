@@ -17,7 +17,7 @@ messages = utils.load_messages_for_lord("Shadowsong")
 #messages = []
 # append add_player and kick_player
 messages.append(utils.CustomLordAudio("add_player", "Stay strong."))
-messages.append(utils.CustomLordAudio("kick_player", "How are you!"))
+messages.append(utils.CustomLordAudio("kick_player", "How dare you!"))
 
 for message in messages:
     print(f"Generating a message '{message.name}': '{message.text}'")
