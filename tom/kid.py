@@ -16,8 +16,8 @@ model = ChatterboxTurboTTS.from_pretrained(device="cpu")
 messages = utils.load_messages_for_lord("Kid")
 #messages = []
 # append add_player and kick_player
-messages.append(utils.CustomLordAudio("add_player", ""))
-messages.append(utils.CustomLordAudio("kick_player", ""))
+messages.append(utils.CustomLordAudio("add_player", "[laugh]"))
+messages.append(utils.CustomLordAudio("kick_player", "[groan]"))
 
 for message in messages:
     print(f"Generating a message '{message.name}': '{message.text}'")
