@@ -5,7 +5,7 @@ import utils
 import time
 
 reference_dir = Path(r"c:\Users\marty\OneDrive\StrongholdCrusader\ReferenceAudio")
-reference = Path(reference_dir, "Caracal.mp3")
+reference = Path(reference_dir, "CaracalNew.mp3")
 output_dir = Path("output").absolute()
 output_dir.mkdir(parents=True, exist_ok=True)
 

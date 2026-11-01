@@ -9,10 +9,12 @@
 | Banu Hashim  | Letho from The Witcher 3   |
 | Berengar  | Ardal from The Witcher 3   |
 | Captain    | Olgierd von Everec from The Witcher 3    |
+| Chirurgeon    |   Vulpes Inculta from Fallout New Vegas  |
 | Constance    | Rosa/Edna var Attre from The Witcher 3    |
 | Cuman    | Lanius from Fallout New Vegas    |
 | Iris    | Viconia from Baldur's Gate 3   |
 | Inquisitor    | Mendoza from Risen   |
+| Isabel    |   |
 | Fatimah    | Carthia from The Witcher 3    |
 | Knight Hospitaller | Vernon Roche from The Witcher 3     |
 | Mulay    | Andrei from Vampire The Masquerade - Bloodlines    |
