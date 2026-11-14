@@ -1,6 +1,3 @@
-from pathlib import Path
-
-import json
 import utils
 
 from text_to_speech import add_voice_to_custom_lord

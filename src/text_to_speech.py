@@ -4,6 +4,11 @@ from pathlib import Path
 import utils
 import shutil
 import subprocess
+import time
+
+delete_output_dir = True
+copy_to_one_drive = True
+
 
 # Load the Turbo model
 model = ChatterboxTurboTTS.from_pretrained(device="cpu")
@@ -13,9 +18,11 @@ def add_voice_to_custom_lord(custom_lord: str, author: str):
     messages = utils.load_messages_for_lord(utils.CUSTOM_LORDS_DIR, author, custom_lord)
     reference = Path(utils.REFERENCE_DIR, f"{custom_lord}.mp3")
     lord_output_dir = Path(utils.OUTPUT_DIR, custom_lord)
-    shutil.rmtree(lord_output_dir, ignore_errors=True)
+    if delete_output_dir:
+        shutil.rmtree(lord_output_dir, ignore_errors=True)
     lord_output_dir.mkdir(parents=True, exist_ok=True)
 
+    start = time.time()
     print(f"Custom lord: {custom_lord}")
 
     for message in messages:
@@ -35,7 +42,7 @@ def add_voice_to_custom_lord(custom_lord: str, author: str):
         f'cd /d "{lord_output_dir}"',
         "if not exist volume mkdir volume",
         "for %%i in (*.wav) do (",
-        rf'"C:\Program Files (x86)\sox-14-4-2\sox.exe" -v 3 "%%i" "{lord_output_dir}\volume\%%~ni.wav"',
+        rf'"{utils.SOX_EXE}" -v 3 "%%i" "{lord_output_dir}\volume\%%~ni.wav"',
         ")"
     ]
     batch = Path(lord_output_dir, "_wav.bat")
@@ -45,11 +52,11 @@ def add_voice_to_custom_lord(custom_lord: str, author: str):
 
     print("Increasing the volume done!")
 
-    #final_output_dir = Path(output_dir, "_temp", custom_lord)
-    final_output_dir = Path(f"{utils.CUSTOM_LORDS_DIR}{author}", custom_lord)
+    final_output_dir = Path(utils.OUTPUT_DIR, "_temp", custom_lord)
+    if copy_to_one_drive:
+        final_output_dir = Path(f"{utils.CUSTOM_LORDS_DIR}{author}", custom_lord)
     shutil.copytree(Path(lord_output_dir, "volume"), final_output_dir, dirs_exist_ok=True)
 
-    print(f"{custom_lord} DONE")
-
-
+    end = time.time()
+    print(f"{custom_lord} DONE - took {end - start} seconds")
 

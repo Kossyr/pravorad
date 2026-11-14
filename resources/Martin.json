@@ -37,7 +37,7 @@
     },
     "Houndmaster": {
         "add_player": "The hunt is on!",
-        "kick_player": ""
+        "kick_player": "Really?"
     },
     "Inquisitor": {
         "add_player": "I bring order to chaos.",
@@ -48,8 +48,8 @@
         "kick_player": "Behind you."
     },
     "Isabel": {
-        "add_player": "",
-        "kick_player": ""
+        "add_player": "You chose well.",
+        "kick_player": "Disappointing."
     },
     "Knight Hospitaller": {
         "add_player": "I answer your call.",
@@ -80,7 +80,7 @@
         "kick_player": "Your loss."
     },
     "Zahir": {
-        "add_player": "",
-        "kick_player": ""
+        "add_player": "Greetings.",
+        "kick_player": "Farewell."
     }
 }
