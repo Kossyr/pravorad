@@ -1,0 +1,66 @@
+{
+    "Aseel": {
+        "add_player": "Hi there!",
+        "kick_player": "Why?"
+    },
+    "Bishop": {
+        "add_player": "Pray with me.",
+        "kick_player": "Heretic!"
+    },
+    "Caracal": {
+        "add_player": "No mercy.",
+        "kick_player": "Pathetic."
+    },
+    "Coco": {
+        "add_player": "That's the spirit!",
+        "kick_player": "Coward."
+    },
+    "Commander": {
+        "add_player": "Forward!",
+        "kick_player": "Dismissed!"
+    },
+    "Emperor Martinus": {
+        "add_player": "For Rome!",
+        "kick_player": "Rome has fallen."
+    },
+    "Hunter": {
+        "add_player": "Is nature in danger?",
+        "kick_player": "Very well."
+    },
+    "Jamal": {
+        "add_player": "Fall in!",
+        "kick_player": "Fall out!"
+    },
+    "Kid": {
+        "add_player": "[laugh]",
+        "kick_player": "[groan]"
+    },
+    "Lady Barbara": {
+        "add_player": "Hello, my sweetie.",
+        "kick_player": "I'm divorcing you!"
+    },
+    "Lone Rider": {
+        "add_player": "Here comes justice!",
+        "kick_player": "Injustice!"
+    },
+    "Maiden Mary": {
+        "add_player": "God bless you.",
+        "kick_player": "God left me!"
+    },
+    "Moladin": {
+        "add_player": "Greetings.",
+        "kick_player": "Farewell."
+    },
+    "Shadowsong": {
+        "add_player": "Stay strong.",
+        "kick_player": "How dare you!"
+    },
+    "Skinner": {
+        "add_player": "I can wait no longer.",
+        "kick_player": "I shall return."
+    },
+    "Villain": {
+        "add_player": "Wake up!",
+        "kick_player": "Show more skills!"
+    }
+}

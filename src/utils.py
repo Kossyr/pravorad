@@ -1,9 +1,17 @@
 from pathlib import Path
+import json
+
+PROJECT_DIR = Path(__file__).parent.parent.absolute()
+RESOURCES_DIR = Path(PROJECT_DIR, "resources")
+OUTPUT_DIR = Path(PROJECT_DIR, "output")
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+CUSTOM_LORDS_DIR = Path(r"c:\Users\marty\OneDrive\StrongholdCrusader\CustomMedia")
+REFERENCE_DIR = Path(r"c:\Users\marty\OneDrive\StrongholdCrusader\ReferenceAudio")
+SOX_EXE = Path(r"C:\Program Files (x86)\sox-14-4-2\sox.exe")
 
 # paralinquistic paths
 # [clear throat], [sigh], [shush], [cough], [groan], [sniff], [gasp], [chuckle], [laugh]
-
-custom_lords_dir = Path(r"c:\Users\marty\OneDrive\StrongholdCrusader\CustomMedia")
 
 JSON_TO_WAV_DICTIONARY = {
     "TAUNT1": "taunt1",
@@ -48,8 +56,8 @@ class CustomLordAudio:
         self.text = text
 
 
-def load_messages_for_lord(custom_lord: str, author: str = "Martin") -> list[CustomLordAudio]:
-    lord_file = Path(f"{custom_lords_dir}{author}", custom_lord, "text.txt")
+def load_messages_for_lord(author: str, custom_lord: str,) -> list[CustomLordAudio]:
+    lord_file = Path(f"{CUSTOM_LORDS_DIR}{author}", custom_lord, "text.txt")
     with open(lord_file) as f_in:
         lines = f_in.readlines()
 
@@ -70,4 +78,22 @@ def load_messages_for_lord(custom_lord: str, author: str = "Martin") -> list[Cus
             text = value
             name = JSON_TO_WAV_DICTIONARY[key]
             audio_list.append(CustomLordAudio(name, text))
+
+    # open the json as well for kick_player and add_player
+    lord_file = Path(RESOURCES_DIR, f"{author}.json")
+    with open(lord_file, "r") as f_in:
+        data = json.load(f_in)
+
+    audio_list.append(CustomLordAudio("add_player", data[custom_lord]["add_player"]))
+    audio_list.append(CustomLordAudio("kick_player", data[custom_lord]["kick_player"]))
+
     return audio_list
+
+def get_lords(author: str) -> list[str]:
+    lord_file = Path(RESOURCES_DIR, f"{author}.json")
+    with open(lord_file, "r") as f_in:
+        data = json.load(f_in)
+    lords = []
+    for d in data.keys():
+        lords.append(d)
+    return lords
