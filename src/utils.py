@@ -1,5 +1,5 @@
-from pathlib import Path
 import json
+from pathlib import Path
 
 PROJECT_DIR = Path(__file__).parent.parent.absolute()
 RESOURCES_DIR = Path(PROJECT_DIR, "resources")
@@ -46,8 +46,8 @@ JSON_TO_WAV_DICTIONARY = {
     "WILL_ATTACK_ENEMY": "will_attack_enemy",
 }
 
-class CustomLordAudio:
 
+class CustomLordAudio:
     name: str
     text: str
 
@@ -56,7 +56,10 @@ class CustomLordAudio:
         self.text = text
 
 
-def load_messages_for_lord(author: str, custom_lord: str,) -> list[CustomLordAudio]:
+def load_messages_for_lord(
+    author: str,
+    custom_lord: str,
+) -> list[CustomLordAudio]:
     lord_file = Path(f"{CUSTOM_LORDS_DIR}{author}", custom_lord, "text.txt")
     with open(lord_file) as f_in:
         lines = f_in.readlines()
@@ -89,11 +92,9 @@ def load_messages_for_lord(author: str, custom_lord: str,) -> list[CustomLordAud
 
     return audio_list
 
+
 def get_lords(author: str) -> list[str]:
     lord_file = Path(RESOURCES_DIR, f"{author}.json")
     with open(lord_file, "r") as f_in:
-        data = json.load(f_in)
-    lords = []
-    for d in data.keys():
-        lords.append(d)
-    return lords
+        data: dict[str, dict[str, str]] = json.load(f_in)
+    return list(data.keys())

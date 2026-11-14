@@ -1,10 +1,12 @@
-import torchaudio as ta
-from chatterbox.tts_turbo import ChatterboxTurboTTS
-from pathlib import Path
-import utils
 import shutil
 import subprocess
 import time
+from pathlib import Path
+
+import torchaudio as ta
+from chatterbox.tts_turbo import ChatterboxTurboTTS
+
+import utils
 
 delete_output_dir = True
 copy_to_one_drive = True
@@ -13,9 +15,10 @@ copy_to_one_drive = True
 # Load the Turbo model
 model = ChatterboxTurboTTS.from_pretrained(device="cpu")
 
+
 def add_voice_to_custom_lord(custom_lord: str, author: str):
     # load our JSON
-    messages = utils.load_messages_for_lord(utils.CUSTOM_LORDS_DIR, author, custom_lord)
+    messages = utils.load_messages_for_lord(author, custom_lord)
     reference = Path(utils.REFERENCE_DIR, f"{custom_lord}.mp3")
     lord_output_dir = Path(utils.OUTPUT_DIR, custom_lord)
     if delete_output_dir:
@@ -27,7 +30,7 @@ def add_voice_to_custom_lord(custom_lord: str, author: str):
 
     for message in messages:
         print(f"Generating a message '{message.name}': '{message.text}'")
-        
+
         # Generate audio (requires a reference clip for voice cloning)
         wav = model.generate(message.text, audio_prompt_path=reference)
 
@@ -43,7 +46,7 @@ def add_voice_to_custom_lord(custom_lord: str, author: str):
         "if not exist volume mkdir volume",
         "for %%i in (*.wav) do (",
         rf'"{utils.SOX_EXE}" -v 3 "%%i" "{lord_output_dir}\volume\%%~ni.wav"',
-        ")"
+        ")",
     ]
     batch = Path(lord_output_dir, "_wav.bat")
     batch.write_text("\n".join(batch_content))
@@ -55,8 +58,9 @@ def add_voice_to_custom_lord(custom_lord: str, author: str):
     final_output_dir = Path(utils.OUTPUT_DIR, "_temp", custom_lord)
     if copy_to_one_drive:
         final_output_dir = Path(f"{utils.CUSTOM_LORDS_DIR}{author}", custom_lord)
-    shutil.copytree(Path(lord_output_dir, "volume"), final_output_dir, dirs_exist_ok=True)
+    shutil.copytree(
+        Path(lord_output_dir, "volume"), final_output_dir, dirs_exist_ok=True
+    )
 
     end = time.time()
     print(f"{custom_lord} DONE - took {end - start} seconds")
-
