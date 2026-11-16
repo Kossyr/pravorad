@@ -4,8 +4,8 @@
         "kick_player": "Divided we fall."
     },
     "Azar Javed": {
-        "add_player": "I like this!",
-        "kick_player": "I don't like this!"
+        "add_player": "[laugh]",
+        "kick_player": "Burn in fire!"
     },
     "Banu Hashim": {
         "add_player": "My tribe is ready.",
@@ -80,7 +80,7 @@
         "kick_player": "Your loss."
     },
     "Zahir": {
-        "add_player": "Greetings.",
-        "kick_player": "Farewell."
+        "add_player": "The pleasure is mine.",
+        "kick_player": "A questionable decision."
     }
 }

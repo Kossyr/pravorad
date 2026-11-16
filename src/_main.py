@@ -19,4 +19,4 @@ def _add_voice_to_custom_lord(custom_lord: str):
     add_voice_to_custom_lord(custom_lord, author)
 
 
-_add_voice_to_custom_lord("Houndmaster")
+_add_voice_to_custom_lord("Isabel")
