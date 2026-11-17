@@ -12,9 +12,10 @@
 | Chirurgeon    |   Vulpes Inculta from Fallout New Vegas  |
 | Constance    | Rosa/Edna var Attre from The Witcher 3    |
 | Cuman    | Lanius from Fallout New Vegas    |
+| Houndmaster    | Vincent Meis from The Witcher    |
 | Iris    | Viconia from Baldur's Gate 3   |
 | Inquisitor    | Mendoza from Risen   |
-| Isabel    |   |
+| Isabel    | Nine-Fingers Keene from Baldur's Gate 3  |
 | Fatimah    | Carthia from The Witcher 3    |
 | Knight Hospitaller | Vernon Roche from The Witcher 3     |
 | Mulay    | Andrei from Vampire The Masquerade - Bloodlines    |
@@ -23,3 +24,4 @@
 | Temple Guard | Grünfeld Bach from Vampire The Masquerade - Bloodlines    |
 | Vizier | Joshua Graham from Fallout New Vegas     |
 | Yusuf | Djikstra from The Witcher 3     |
+| Zahir | Maximillian Strauss from Vampire The Masquerade - Bloodlines     |

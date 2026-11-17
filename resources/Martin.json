@@ -48,8 +48,8 @@
         "kick_player": "Behind you."
     },
     "Isabel": {
-        "add_player": "You chose well.",
-        "kick_player": "Disappointing."
+        "add_player": "Well chosen.",
+        "kick_player": "You disappoint me."
     },
     "Knight Hospitaller": {
         "add_player": "I answer your call.",
