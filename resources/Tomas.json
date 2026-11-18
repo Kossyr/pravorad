@@ -51,6 +51,10 @@
         "add_player": "Greetings.",
         "kick_player": "Farewell."
     },
+    "Scorpion": {
+        "add_player": "Great!",
+        "kick_player": "Wrong."
+    },
     "Shadowsong": {
         "add_player": "Stay strong.",
         "kick_player": "How dare you!"
